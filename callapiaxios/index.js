@@ -9,32 +9,25 @@ import {
     TextInput,
     Button,
     Image,
-    KeyboardAvoidingView,
-    length
+    FlatList
 } from 'react-native';
 import { BounceInRight } from 'react-native-reanimated';
 
 const CallApiAxios = () => {
-    const [dataUser, setDataUser] = useState({
-        // id: '',
-        // img: '',
-        // name: '',
-        // dsc: '',
-        // price: '',
-        // rate: '',
-        // country: ''
 
-        avatar: '',
-        email : '',
-        name :'',
-        year : ' '
+    const [dataUser, setDataUser] = useState({
+        email: '',
+        name: '',
+        year: ' '
     })
 
+    //API Data Pegawai (https://reqres.in/api/user/1)
+
     const getData = () => {
-        Axios.get('https://restaurant-api.dicoding.dev')
+        Axios.get('https://reqres.in/api/user/1')
             .then(result => {
                 console.log(result.data)
-                // setDataUser(result.data.data);
+                setDataUser(result.data.data);
             })
     }
 
@@ -42,12 +35,12 @@ const CallApiAxios = () => {
         <View style={Styles.container}>
             <Text>Get Data</Text>
             <Button title='Get Data' onPress={getData} />
-                <View style={{ marginTop: 40}}>
-                   {/* <Image source={{uri: dataUser.avatar}} /> */}
-                    
-                    <Text>{dataUser.name}</Text>
-                    <Text>{dataUser.year}</Text>
-                </View>
+            
+            <View style={{ marginTop: 40 }}>
+                <View style={{ width: 50, height: 50, borderWidth: 1}}/>
+                <Text>{dataUser.name}</Text>
+                <Text>{dataUser.year}</Text>
+            </View>
         </View>
     )
 }

@@ -19,6 +19,12 @@ const Home = (props) => {
     const onCallApiAxios = () => {
         props.navigation.navigate('CallApiAxios')
     }
+    const onGreenmart = () => {
+        props.navigation.navigate('Greenmart')
+    }
+    const onSplashScreen = () => {
+        props.navigation.navigate('SplashScreen')
+    }
     return (
         <SafeAreaView style={{ flex: 1, }}>
             <View style={styles.container}>
@@ -28,7 +34,7 @@ const Home = (props) => {
                             <FontAwesomeIcon icon={faBars} size={25} color="white" />
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={{ width: 40, height: 40, borderRadius: 50, alignItems: "center", justifyContent: "center" }}>
+                        <TouchableOpacity style={{ width: 40, height: 40, borderRadius: 50, alignItems: "center", justifyContent: "center" }} onPress={onSplashScreen}>
                             <FontAwesomeIcon icon={faBell} size={25} color="white" />
                         </TouchableOpacity>
                     </View>
@@ -52,7 +58,7 @@ const Home = (props) => {
 
                 <View style={styles.content}>
                     <View style={styles.content.menu}>
-                        <TouchableOpacity style={{ width: 130, height: 130, alignItems: "center", justifyContent: "center" }}>
+                        <TouchableOpacity style={{ width: 130, height: 130, alignItems: "center", justifyContent: "center" }} onPress={onGreenmart}>
                         <Image source={require("../../asset/image/icon/Events.png")} style={{ width: 120, height: 120,borderRadius: 10, }} />
                         </TouchableOpacity>
                         <TouchableOpacity style={{ width: 130, height: 130, alignItems: "center", justifyContent: "center" }}  onPress={onCallApiAxios}>

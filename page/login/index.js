@@ -7,7 +7,10 @@ import {
     Button,
     Image,
     KeyboardAvoidingView,
+    TouchableOpacity
 } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faAt, faKey } from '@fortawesome/free-solid-svg-icons'
 
 const Login = (props) => {
     const onHome = () => {
@@ -19,37 +22,48 @@ const Login = (props) => {
             <View style={styles.head}>
                 <Image source={require("../../asset/image/logo/LogoPB.png")} style={{ width: 150, height: 150, }} />
             </View>
-
-            <View style={{ marginVertical: 50 }}>
-                <View style={{ marginBottom: 10 }}>
-                    <Text style={styles.container.text}>Email</Text>
-                    <TextInput style={{ borderWidth: 1, borderRadius: 15 }}></TextInput>
+            <KeyboardAvoidingView>
+                <View style={{ marginTop: 40, marginBottom: 20 }}>
+                    <View style={{ marginBottom: 25, paddingHorizontal: 10, flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderRadius: 8, borderColor: 'gray' }}>
+                        <FontAwesomeIcon icon={faAt} size={15} color='#303481' />
+                        <TextInput style={{ flex: 1, paddingHorizontal: 10, marginLeft: 10, fontSize: 18 }}></TextInput>
+                    </View>
+                    <View style={{ paddingHorizontal: 10, flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderRadius: 8, borderColor: 'gray' }}>
+                        <FontAwesomeIcon icon={faKey} size={15} color='#303481' />
+                        <TextInput secureTextEntry={true} style={{ flex: 1, paddingHorizontal: 10, marginLeft: 10, alignItems: 'center', fontSize: 18 }}></TextInput>
+                    </View>
                 </View>
+
                 <View>
-                    <Text style={styles.container.text}>Password</Text>
-                    <TextInput style={{ borderWidth: 1, borderRadius: 15,}}></TextInput>
+                    <TouchableOpacity onPress={onHome} style={{ backgroundColor: '#303481', padding: 20, borderRadius: 10, alignItems: 'center' }}>
+                        <Text style={{ color: 'white', fontWeight: 'bold' }}>Login</Text>
+                    </TouchableOpacity>
                 </View>
-            </View>
 
-            <View>
-                <Button title="submit" onPress={onHome}/>
-            </View>
-
+            </KeyboardAvoidingView>
             <View style={{ marginVertical: 20, alignItems: 'center' }}>
                 <Text>Or</Text>
             </View>
 
 
-            <View style={{ flexDirection:'row', justifyContent:'space-evenly'}}>
-                <View style={{ borderWidth: 1, borderRadius: 20, width: 60, height: 60 }}></View>
-                <View style={{ borderWidth: 1, borderRadius: 20, width: 60, height: 60 }}></View>
-                <View style={{ borderWidth: 1, borderRadius: 20, width: 60, height: 60 }}></View>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                <TouchableOpacity style={{ borderRadius: 20, width: 60, height: 60, justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={require("../../asset/image/icon/outlook.png")} style={{ width: 30, height: 30, }} />
+                </TouchableOpacity>
+                <TouchableOpacity style={{ borderRadius: 20, width: 60, height: 60, justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={require("../../asset/image/icon/google.png")} style={{ width: 35, height: 35, }} />
+                </TouchableOpacity>
+                <TouchableOpacity style={{ borderRadius: 20, width: 60, height: 60, justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={require("../../asset/image/icon/facebook.png")} style={{ width: 35, height: 35, }} />
+                </TouchableOpacity>
             </View>
 
-            <View style={{alignItems:'center', marginTop: 20}}>
-                <View style={{ flexDirection:'row'}}>
+            <View style={{ alignItems: 'center', marginTop: 20 }}>
+                <View style={{ flexDirection: 'row' }}>
                     <Text>Don`t have an account ?  </Text>
-                    <Text style={{ fontWeight: 'bold', color: 'blue'}}>Sign Up  </Text>
+                    <TouchableOpacity>
+                        <Text style={{ fontWeight: 'bold', color: '#303481' }}>Sign Up  </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
 
