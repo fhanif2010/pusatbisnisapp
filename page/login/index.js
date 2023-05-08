@@ -10,11 +10,14 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faAt, faKey } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons'
 
 const Login = (props) => {
     const onHome = () => {
         props.navigation.navigate('Home')
+    }
+    const onSignUp = () => {
+        props.navigation.navigate('SignUp')
     }
 
     return (
@@ -25,7 +28,7 @@ const Login = (props) => {
             <KeyboardAvoidingView>
                 <View style={{ marginTop: 40, marginBottom: 20 }}>
                     <View style={{ marginBottom: 25, paddingHorizontal: 10, flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderRadius: 8, borderColor: 'gray' }}>
-                        <FontAwesomeIcon icon={faAt} size={15} color='#303481' />
+                        <FontAwesomeIcon icon={faEnvelope} size={15} color='#303481' />
                         <TextInput style={{ flex: 1, paddingHorizontal: 10, marginLeft: 10, fontSize: 18 }}></TextInput>
                     </View>
                     <View style={{ paddingHorizontal: 10, flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderRadius: 8, borderColor: 'gray' }}>
@@ -61,7 +64,7 @@ const Login = (props) => {
             <View style={{ alignItems: 'center', marginTop: 20 }}>
                 <View style={{ flexDirection: 'row' }}>
                     <Text>Don`t have an account ?  </Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={onSignUp}>
                         <Text style={{ fontWeight: 'bold', color: '#303481' }}>Sign Up  </Text>
                     </TouchableOpacity>
                 </View>

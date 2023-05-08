@@ -10,7 +10,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faBars, faBell } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faBell, faSearch, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Home = (props) => {
     const onLogin = () => {
@@ -30,50 +30,74 @@ const Home = (props) => {
             <View style={styles.container}>
                 <View style={styles.head}>
                     <View style={styles.head.nav}>
-                        <TouchableOpacity style={{ width: 40, height: 40, borderRadius: 50, alignItems: "center", justifyContent: "center" }} onPress={onLogin}>
-                            <FontAwesomeIcon icon={faBars} size={25} color="white" />
+                        <TouchableOpacity style={{ paddingHorizontal: 8, width: '85%', height: 40, borderRadius: 50, alignItems: "center", justifyContent: "center", backgroundColor: '#F5F5F5', flexDirection: 'row' }} >
+                            <FontAwesomeIcon icon={faSearch} size={25} color="gray" />
+                            <TextInput placeholder="Cari kebutuhan anda disini" style={{ flex: 1, marginHorizontal: 7 }}></TextInput>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={{ width: 40, height: 40, borderRadius: 50, alignItems: "center", justifyContent: "center" }} onPress={onSplashScreen}>
-                            <FontAwesomeIcon icon={faBell} size={25} color="white" />
+                            <FontAwesomeIcon icon={faUserCircle} size={40} color="white" />
+                            <View style={{ backgroundColor: 'red', borderRadius: 20, width: 20, height: 20, position: 'absolute', top: -5, right: -2 }} />
                         </TouchableOpacity>
                     </View>
                     <View style={{ marginHorizontal: 10, marginTop: 20 }}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 25, fontFamily: 'Roboto', color: 'gray' }}>Hello,</Text>
-                        <Text style={{ fontWeight: 'bold', fontSize: 25, fontFamily: 'Roboto', color: 'black' }}>Mr Giat Ridhansyah</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 25, fontFamily: 'Roboto', color: '#BBBFCA' }}>Hello,</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 25, fontFamily: 'Roboto', color: 'white' }}>Mr Giat Ridhansyah</Text>
                     </View>
                 </View>
 
-                <View style={styles.search}>
-                    <TouchableOpacity style={styles.search.info}>
-                        <View>
-                            <Text style={{ fontWeight: 'bold', fontSize: 60, fontFamily: 'Roboto', color: 'black' }}>9</Text>
-                        </View>
-                        <View>
-                            <Text style={{ fontWeight: 'bold', fontSize: 20, fontFamily: 'Roboto', color: 'gray' }}>Event the Day</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
 
 
                 <View style={styles.content}>
-                    <View style={styles.content.menu}>
-                        <TouchableOpacity style={{ width: 130, height: 130, alignItems: "center", justifyContent: "center" }} onPress={onGreenmart}>
-                        <Image source={require("../../asset/image/icon/Events.png")} style={{ width: 120, height: 120,borderRadius: 10, }} />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{ width: 130, height: 130, alignItems: "center", justifyContent: "center" }}  onPress={onCallApiAxios}>
-                        <Image source={require("../../asset/image/icon/breakfast.png")} style={{ width: 120, height: 120,borderRadius: 10, }} />
-                        </TouchableOpacity>
+                    <View style={{ height: "30%", width: "100%", borderRadius: 30, backgroundColor: '#D6E6F2', marginBottom: 40 }}>
+
                     </View>
+
                     <View style={styles.content.menu}>
-                        <TouchableOpacity style={{ width: 130, height: 130, alignItems: "center", justifyContent: "center" }}>
-                        <Image source={require("../../asset/image/icon/Booking.png")} style={{ width: 120, height: 120,borderRadius: 10, }} />
+                        <TouchableOpacity style={styles.content.menu.btn}>
+                            <Image source={require("../../asset/image/icon/calendar.png")} style={styles.content.menu.img} />
+                            <Text style={styles.content.menu.text}>Event</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ width: 130, height: 130, alignItems: "center", justifyContent: "center" }}>
-                        <Image source={require("../../asset/image/icon/Newspaper.png")} style={{ width: 120, height: 120, borderRadius: 10, }} />
+                        <TouchableOpacity style={styles.content.menu.btn}>
+                            <Image source={require("../../asset/image/icon/hotel.png")} style={styles.content.menu.img} />
+                            <Text style={styles.content.menu.text}>Hotel</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.content.menu.btn}>
+                            <Image source={require("../../asset/image/icon/foodstall.png")} style={styles.content.menu.img} />
+                            <Text style={styles.content.menu.text}>Gren Cafe</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.content.menu.btn}>
+                            <Image source={require("../../asset/image/icon/firstaidkit.png")} style={styles.content.menu.img} />
+                            <Text style={styles.content.menu.text}>Poliklinik</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.content.menu.btn}>
+                            <Image source={require("../../asset/image/icon/warehouse.png")} style={styles.content.menu.img} />
+                            <Text style={styles.content.menu.text}>Room</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.content.menu.btn}>
+                            <Image source={require("../../asset/image/icon/books.png")} style={styles.content.menu.img} />
+                            <Text style={styles.content.menu.text}>Training Institute</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.content.menu.btn}>
+                            <Image source={require("../../asset/image/icon/pool.png")} style={styles.content.menu.img} />
+                            <Text style={styles.content.menu.text}>Sauna</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.content.menu.btn}>
+                            <Image source={require("../../asset/image/icon/app.png")} style={styles.content.menu.img} />
+                            <Text style={styles.content.menu.text}>Lainnya</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
+
+                {/* <View style={{width: '100%', paddingHorizontal: 20}}>
+                    <View style={{backgroundColor: 'gray', paddingBottom: 10}}>
+                        <Text style={{fontWeight: 'bold', fontSize: 18}}>Nikmati Promo Menarik</Text>
+                        <Text>Dapatkan diskon menarik sekarang juga, sebelum kehabisan !</Text>
+                    </View>
+                    <View style={{ backgroundColor: 'red', width: "100%", height: 60}}>
+
+                    </View>
+                </View> */}
             </View>
         </SafeAreaView>
     )
@@ -90,38 +114,47 @@ const styles = {
     },
     head: {
         paddingVertical: 20,
-        paddingHorizontal: 10,
+        paddingHorizontal: 15,
+        marginBottom: 20,
         width: '100%',
-        height: 200,
+        backgroundColor: '#303481',
+        // height: "30%",
         nav: {
             justifyContent: 'space-between',
             flexDirection: 'row',
         }
     },
-    search: {
-        alignItems: 'center',
-        top: -30,
-        info: {
-            alignItems: 'center',
-        justifyContent: 'space-evenly',
-        flexDirection: 'row',
-        backgroundColor: 'white',
-        borderRadius: 20,
-        width: '90%',
-        height: 140,
-        position: 'absolute',
-        }
-    },
+
     content: {
-        top: 150,
-        alignItems: 'center',
-        height: 40,
-        backgroundColor: 'gery',
+        // height: "58%",
+        borderRadius: 30,
+        marginTop: -30,
+        backgroundColor: '#F5F5F5',
+        paddingVertical: 20,
+        paddingHorizontal: 20,
         menu: {
             flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            width: '85%',
+            justifyContent: 'space-around',
             marginBottom: 20,
+            flexWrap: 'wrap',
+            btn: {
+                alignItems: "center",
+                justifyContent: "center",
+                width: 70,
+                marginHorizontal: 5,
+                marginBottom: 15
+
+            },
+            img: {
+                width: 50,
+                height: 50,
+                borderRadius: 10,
+                marginBottom: 5
+            },
+            text: {
+                fontSize: 14,
+            }
+
         }
     }
 
